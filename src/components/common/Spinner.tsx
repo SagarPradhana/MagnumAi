@@ -1,0 +1,28 @@
+export function Spinner({ size = 20 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      style={{ animation: 'spin 0.8s linear infinite' }}
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="#2d2d4a"
+        strokeWidth="3"
+        fill="none"
+      />
+      <path
+        d="M12 2a10 10 0 0 1 10 10"
+        stroke="#7c5cfc"
+        strokeWidth="3"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
+    </svg>
+  );
+}
