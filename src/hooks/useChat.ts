@@ -71,6 +71,24 @@ export function useChat() {
       const convId = overrideConvId || activeId;
       if (!convId || !apiKey) return;
 
+      if (!apiKey) {
+        setIsLoading(false);
+        const errorMsg: Message = {
+          id: generateId(),
+          role: 'assistant',
+          content: 'API key not configured. Set `VITE_OPENROUTER_API_KEY` in your environment or in Netlify dashboard (Site settings → Environment variables).',
+          timestamp: Date.now(),
+        };
+        setConversations((prev) =>
+          prev.map((c) =>
+            c.id === convId
+              ? { ...c, messages: [...c.messages, errorMsg], updatedAt: Date.now() }
+              : c
+          )
+        );
+        return;
+      }
+
       setIsLoading(true);
       setStreamingContent('');
       const startTime = Date.now();

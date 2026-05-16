@@ -12,7 +12,7 @@ import type { OutputMode } from './types';
 const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY || '';
 
 export default function App() {
-  const [model, setModel] = useLocalStorage('magnumai-model', 'openai/gpt-4o');
+  const [model, setModel] = useLocalStorage('magnumai-model', 'deepseek/deepseek-chat');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);

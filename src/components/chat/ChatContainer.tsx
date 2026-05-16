@@ -42,7 +42,7 @@ export function ChatContainer({
     return (
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         <EmptyState onNewChat={onNewChat} hasApiKey={hasApiKey} />
-        <ChatInput onSend={onSend} isLoading={isLoading} onStop={onStop} disabled={!hasApiKey} currentModel={currentModel} onModelChange={onModelChange} />
+        <ChatInput onSend={onSend} isLoading={isLoading} onStop={onStop} currentModel={currentModel} onModelChange={onModelChange} />
       </div>
     );
   }
@@ -84,7 +84,7 @@ export function ChatContainer({
           <div ref={bottomRef} />
         </div>
       </div>
-      <ChatInput onSend={onSend} isLoading={isLoading} onStop={onStop} disabled={!hasApiKey} currentModel={currentModel} onModelChange={onModelChange} />
+      <ChatInput onSend={onSend} isLoading={isLoading} onStop={onStop} currentModel={currentModel} onModelChange={onModelChange} />
     </div>
   );
 }
